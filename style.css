@@ -48,32 +48,66 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* --- SECTIONS --- */
-section {
-  padding: 40px 20px;
-  width: 80%;
-  margin: auto;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  margin-top: 40px;
-  animation: fadeIn 0.6s ease-out;
+/* --- HERO --- */
+.hero {
+  background: linear-gradient(135deg, #2c3e50, #3b4a5c);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-section h2 {
-  color: #2c3e50;
-  margin-bottom: 15px;
+.hero h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
 }
 
-/* --- COMPÉTENCES --- */
-.competence {
-  border-left: 6px solid #3498db;
-  padding-left: 15px;
+.hero p {
+  font-size: 1.2em;
   margin-bottom: 20px;
 }
 
-.competence.parcours-c {
-  border-color: #f1c40f;
+/* --- SECTIONS GLOBALES --- */
+.section {
+  width: 80%;
+  margin: 40px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.8em;
+}
+
+/* --- TIMELINE (PARCOURS SCOLAIRE) --- */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.timeline-item {
+  padding: 15px 20px;
+  background: #ecf0f1;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.timeline-item h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+/* --- SKILLS GRID --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
 }
 
 /* --- CV IMAGE --- */
@@ -98,6 +132,10 @@ section h2 {
   border-radius: 6px;
   font-weight: bold;
   transition: 0.3s ease;
+}
+
+.download-btn-container {
+  text-align: center;
 }
 
 .download-btn:hover {
@@ -167,11 +205,7 @@ section h2 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* --- GITHUB BUTTON --- */
 .github-link {
   text-align: center;
   margin-top: 20px;
@@ -194,11 +228,111 @@ section h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.project-image {
-  display: block;
-  margin: 20px auto;
-  max-width: 300px;
+.cta-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  color: #16a085;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.click-section {
+  width: 80%;
+  margin: 40px auto;
+  padding: 35px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.click-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  background-color: #f0f4f8;
+}
+
+.click-section h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.8em;
+}
+
+.click-section p {
+  margin-top: 10px;
+  font-size: 1.1em;
+  opacity: 0.8;
+}
+
+/* --- PROJECT IMAGE --- */
+
+.section.dark {
+  background-color: #2c3e50;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.section.dark h2 {
+  color: #f1f1f1;
+}
+
+.logo-frame {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-frame img {
+  max-width: 180px;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.skill-item {
+  background: #ecf0f1;
+  padding: 20px;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;   /* Centre horizontalement */
+  align-items: center;       /* Centre verticalement */
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  background: #e2e6ea;
+}
+
+.skill-item img {
+  width: 70px;      /* Ajuste la taille ici */
+  height: auto;
+  opacity: 0.95;
+  transition: 0.3s ease;
+  display: block;
+
+}
+
+.skill-item img:hover {
+  opacity: 1;
+}
+
+/* --- ANIMATION --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
